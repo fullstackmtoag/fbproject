@@ -1,0 +1,205 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-facebook: var(--facebook);
+  --color-instagram: var(--instagram);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* Fonts: app/layout.tsx sets --font-jakarta via next/font. */
+  /* Warm stone light mode: tinted page, cream surfaces, warm charcoal text. */
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --background: #f4f2ed;
+  --foreground: #2c2825;
+  --card: #faf8f5;
+  --card-foreground: #2c2825;
+  --popover: #faf8f5;
+  --popover-foreground: #2c2825;
+  --primary: #2c2825;
+  --primary-foreground: #faf8f5;
+  --secondary: #e8e3db;
+  --secondary-foreground: #2c2825;
+  --muted: #e8e3db;
+  --muted-foreground: #6f6862;
+  --accent: #e8e3db;
+  --accent-foreground: #2c2825;
+  --destructive: oklch(0.55 0.16 27);
+  --border: #e4ddd4;
+  --input: #e4ddd4;
+  --ring: #a39b93;
+  --chart-1: #ddd6cc;
+  --chart-2: #6f6862;
+  --chart-3: #57514c;
+  --chart-4: #3f3a36;
+  --chart-5: #2c2825;
+  --radius: 0.625rem;
+  --sidebar: #f6f3ee;
+  --sidebar-foreground: #2c2825;
+  --sidebar-primary: #2c2825;
+  --sidebar-primary-foreground: #faf8f5;
+  --sidebar-accent: #e7e1d7;
+  --sidebar-accent-foreground: #2c2825;
+  --sidebar-border: #e4ddd4;
+  --sidebar-ring: #a39b93;
+  /* Slightly eased brand colors. Dark mode restores the originals below. */
+  --facebook: #3a84d0;
+  --instagram: #c75b88;
+  --success: oklch(0.52 0.11 152);
+  --warning: oklch(0.74 0.08 78);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+  /* Original brand accents, so dark mode is unchanged by the softer light palette. */
+  --facebook: #1877f2;
+  --instagram: #dd2a7b;
+  --success: oklch(0.627 0.17 149.2);
+  --warning: oklch(0.769 0.165 70.1);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    font-size: 16px;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-background text-foreground text-[0.9375rem] leading-relaxed;
+    letter-spacing: -0.011em;
+  }
+  h1,
+  h2,
+  h3,
+  .font-heading {
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Instagram brand gradient (#F58529 -> #DD2A7B -> #8134AF) */
+@utility bg-instagram-gradient {
+  background-image: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #8134af 100%);
+}
+
+@utility text-instagram-gradient {
+  background-image: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #8134af 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* The dashboard shell owns the viewport. Only #app-scroll scrolls. */
+html:has(#app-shell) {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+html:has(#app-shell) body {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+#app-scroll,
+#sidebar-nav {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--foreground) 28%, transparent) transparent;
+}
+
+#app-scroll::-webkit-scrollbar,
+#sidebar-nav::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+#app-scroll::-webkit-scrollbar-track,
+#sidebar-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#app-scroll::-webkit-scrollbar-thumb,
+#sidebar-nav::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--foreground) 28%, transparent);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
