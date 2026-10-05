@@ -33,7 +33,7 @@ yarn-error.log*
 # env files (never commit secrets; .env.example is the only tracked env file)
 .env*
 .env.local
-!.env.example
+.env.example
 
 # vercel
 .vercel
